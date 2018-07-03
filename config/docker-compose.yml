@@ -1,0 +1,12 @@
+version: '2'
+services:
+  golang_test:
+    build:
+      context: ../../golang
+      dockerfile: config/go/build/Dockerfile
+    volumes:
+      - ./go/build/deploy.sh:/deploy.sh
+    ports:
+      - '112233:3000'
+      - '112233:3003'
+    container_name: golang_test
